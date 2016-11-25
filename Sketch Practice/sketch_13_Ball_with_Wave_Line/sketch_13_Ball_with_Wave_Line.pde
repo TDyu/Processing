@@ -25,7 +25,7 @@ float amplitudeD = -100;
 float freqMagD = 10;
 
 /* Ball */
-float raidus = 40;
+float radius = 40;
 // Left Ball
 float xL;
 float firstYL, yL;
@@ -114,11 +114,11 @@ void draw() {
   
   // draw ball
   fill(colorPool[0]);
-  ellipse(xL, yL, raidus, raidus);
+  ellipse(xL, yL, radius, radius);
   fill(colorPool[1]);
-  ellipse(xR, yR, raidus, raidus);
+  ellipse(xR, yR, radius, radius);
   fill(colorPool[2]);
-  ellipse(xU, yU, raidus, raidus);
+  ellipse(xU, yU, radius, radius);
   fill(colorPool[3]);
-  ellipse(xD, yD, raidus, raidus);
+  ellipse(xD, yD, radius, radius);
 }

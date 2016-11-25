@@ -3,7 +3,7 @@ float x, y;
 float speedX, speedY;
 float xMax = 10;
 float yMax = 8;
-float raidus = 100;
+float radius = 100;
 
 // Echo
 int numberOfEcho = 10;
@@ -44,7 +44,7 @@ void draw() {
         echoY[i] = echoY[i-1];
         if (i % echoTime == echoTime-1) { // let echo show each echoTime last = echoTime-1 : first two space then a echo
           fill(255, 255-i*(255/pathTotal)); // linearly change opacity
-          ellipse(echoX[i], echoY[i], raidus, raidus);
+          ellipse(echoX[i], echoY[i], radius, radius);
         }
       }
     }
@@ -59,21 +59,21 @@ void draw() {
         echoY[i] = echoY[i-1];
         if (i % echoTime == echoTime-1) { 
           fill(255, 255-i*(255/pathTotal));
-          ellipse(echoX[i], echoY[i], raidus, raidus);
+          ellipse(echoX[i], echoY[i], radius, radius);
         }
       }
     }
   }
   
   // Ball
-  if ((x - raidus/2) < 0 || (x + raidus/2) > width) { // Bounce Boundary
+  if ((x - radius/2) < 0 || (x + radius/2) > width) { // Bounce Boundary
     speedX *= -1;
   }
-  if ((y - raidus/2) < 0 || (y + raidus/2) > height) {
+  if ((y - radius/2) < 0 || (y + radius/2) > height) {
     speedY *= -1;
   }
   x += speedX; // move
   y += speedY;
   fill(255);
-  ellipse(x, y, raidus, raidus);
+  ellipse(x, y, radius, radius);
 }

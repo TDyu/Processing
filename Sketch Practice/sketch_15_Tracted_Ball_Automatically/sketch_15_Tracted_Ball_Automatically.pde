@@ -1,6 +1,6 @@
 // Attractor
 PVector attractor;
-float raidusAttrac = 80;
+float radiusAttrac = 80;
 float amplitude = 200;
 float timer = 0;
 
@@ -8,7 +8,7 @@ float timer = 0;
 PVector position;
 PVector velocity;
 PVector acceleration;
-float raidus = 40;
+float radius = 40;
 float rangeY;
 
 void setup() {
@@ -27,10 +27,10 @@ void draw() {
   
   /* Tractor */
   // Bounce
-  if (position.x - raidus < 0 || position.x + raidus > width) {
+  if (position.x - radius < 0 || position.x + radius > width) {
     velocity.x *= -1;
   }
-  if (position.y - raidus < 0 || position.y + raidus > height) {
+  if (position.y - radius < 0 || position.y + radius > height) {
     velocity.y *= -1;
   }
   // Tracting
@@ -40,7 +40,7 @@ void draw() {
   velocity.x *= 0.98; // just x cause attractor just change x direction
   position.add(velocity);
   // draw
-  ellipse(position.x, position.y, raidus, raidus);
+  ellipse(position.x, position.y, radius, radius);
   
   /* Attractor */
   // move just change x
@@ -52,5 +52,5 @@ void draw() {
   line(width/2-amplitude, height/2, width/2+amplitude, height/2);
   // draw ball
   fill(255);
-  ellipse(attractor.x, attractor.y, raidusAttrac, raidusAttrac);
+  ellipse(attractor.x, attractor.y, radiusAttrac, radiusAttrac);
 }

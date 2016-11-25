@@ -1,7 +1,7 @@
 // Center
 float centerX, centerY; // ordinary
 float centerRadius = 100;
-float ridusChange = 10;
+float radiusChange = 10;
 boolean touch = false;
 
 // Moveing
@@ -35,7 +35,7 @@ void draw() {
   if (distance < centerRadius) { // touching
     if (!touch) { // avoide continuously larging when small circle in the center circle
       touch = true;
-      centerRadius += ridusChange;
+      centerRadius += radiusChange;
       fill(255, 48);
       ellipse(centerX, centerY, centerRadius*2, centerRadius*2);
     }

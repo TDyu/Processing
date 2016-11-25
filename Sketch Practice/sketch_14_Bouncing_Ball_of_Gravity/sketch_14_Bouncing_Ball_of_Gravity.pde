@@ -2,7 +2,7 @@ PVector position;
 PVector velocity;
 //PVector acceleration;
 PVector g = new PVector(0, 1); // gravity just have vertical direction
-float raidus = 60;
+float radius = 60;
 
 void setup() {
   size(1280, 720);
@@ -20,10 +20,10 @@ void draw() {
   //acceleration.mult(0); // = no acceleration.
   
   // Bouncing : just deal with vertical direction cause of gravity
-  if (position.y+raidus > height || position.y-raidus < 0) { // Boundary
+  if (position.y+radius > height || position.y-radius < 0) { // Boundary
     velocity.y *= -0.9; // Bouncing degree
-    position.y = height - raidus; // limit lower position
+    position.y = height - radius; // limit lower position
   }
   
-  ellipse(position.x, position.y, raidus*2, raidus*2);
+  ellipse(position.x, position.y, radius*2, radius*2);
 }

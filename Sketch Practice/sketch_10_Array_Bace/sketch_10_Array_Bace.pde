@@ -2,7 +2,7 @@
 int count = 10;
 float xMax = 10;
 float yMax = 8;
-float raidus = 40;
+float radius = 40;
 color[] c = {#00a9ff, #c78aea, #4bed40}; // Color Pool : SII, NII, XII ...XD
 
 // Generator
@@ -26,10 +26,10 @@ void setup() {
 void draw() {
   for (int i=0; i<count; i++) {
     // each Bounce Boundary
-    if ((x[i]-raidus/2) < 0 || (x[i]+raidus/2) > width){
+    if ((x[i]-radius/2) < 0 || (x[i]+radius/2) > width){
       speedX[i] *= -1;
     }
-    if ((y[i]-raidus/2) < 0 || (y[i]+raidus/2) > height){
+    if ((y[i]-radius/2) < 0 || (y[i]+radius/2) > height){
       speedY[i] *= -1;
     }
     
@@ -40,6 +40,6 @@ void draw() {
     // each draw
     int rand = (int)random(0, 3);
     fill(c[rand]);
-    ellipse(x[i], y[i], raidus, raidus);
+    ellipse(x[i], y[i], radius, radius);
   }
 }

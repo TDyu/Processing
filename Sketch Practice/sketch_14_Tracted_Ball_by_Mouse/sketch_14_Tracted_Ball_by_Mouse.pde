@@ -1,12 +1,12 @@
 //Attractor (Ball by mouse) ((Tracted
 PVector attractor;
-float raidusAttra = 80;
+float radiusAttra = 80;
 
 //Attracted (small ball) ((Tractor
 PVector position;
 PVector velocity;
 PVector acceleration;
-float raidus = 40;
+float radius = 40;
 
 void setup() {
   size(1280, 720);
@@ -23,10 +23,10 @@ void draw() {
   
   /* Tractor (small ball) */
   // Bounce
-  if (position.x - raidus < 0 || position.x + raidus > width) {
+  if (position.x - radius < 0 || position.x + radius > width) {
     velocity.x *= -1;
   }
-  if (position.y - raidus < 0 || position.y + raidus > height) {
+  if (position.y - radius < 0 || position.y + radius > height) {
     velocity.y *= -1;
   }
   // Tracting
@@ -36,7 +36,7 @@ void draw() {
   velocity.mult(0.98); // slower
   position.add(velocity);
   //draw
-  ellipse(position.x, position.y, raidus, raidus);
+  ellipse(position.x, position.y, radius, radius);
   
   /* Attractor */
   // set ordinary
@@ -44,5 +44,5 @@ void draw() {
   attractor.y = mouseY;
   //draw
   fill(255);
-  ellipse(attractor.x, attractor.y, raidusAttra, raidusAttra);
+  ellipse(attractor.x, attractor.y, radiusAttra, radiusAttra);
 }

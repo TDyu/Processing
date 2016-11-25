@@ -4,7 +4,7 @@ float speedX, speedY; // moving chang value (direction & speed)((the angle of Bo
 //Controller
 float xMax = 10; // x change value range
 float yMax = 8; // y change value range
-float raidus = 40;
+float radius = 40;
 
 void setup(){ // initialize
   size(1280, 720); // (width, height)
@@ -16,13 +16,13 @@ void setup(){ // initialize
 }
 
 void draw(){ // change per fram
-  ellipse(x, y, raidus, raidus); // circle (x, y, width, height)
+  ellipse(x, y, radius, radius); // circle (x, y, width, height)
  
   // Bounce Boundary of Circumference ((not center
-  if((y-raidus/2) < 0 || (y+raidus/2) > height){
+  if((y-radius/2) < 0 || (y+radius/2) > height){
     speedY *= -1;
   }
-  if((x-raidus/2) < 0 || (x+raidus/2) > width){
+  if((x-radius/2) < 0 || (x+radius/2) > width){
     speedX *= -1;
   }
   
