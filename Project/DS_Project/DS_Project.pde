@@ -116,8 +116,8 @@ void draw() {
     //noLoop();
   } else if (end) {
     shootBullets.clear();
-    if (count != attackPoint/2) {
-      attackedMonsters.top().display(width/2, height/2);
+    if (count != attackPoint/2 && attackPoint != 0) {
+      attackedMonsters.top().display(width/2, height/2); /*bug*/
       attackedMonsters.pop();
       if (count != attackPoint/2)  count++;
       /*soundEff = minim.loadFile("daung.wav");
@@ -289,7 +289,7 @@ void newNormalMonster() {
 }
 
 void attack() { // algorithmneed to be optimized 
-  if (shootBullets.size() != 0 && monsters.size() != 0) {
+  if (!end && shootBullets.size() != 0 && monsters.size() != 0) {
     for (int i=0; i<shootBullets.size(); i++) {
       for (int j=0; j<monsters.size(); j++) {
         PVector bulletUL = new PVector(shootBullets.get(i).getPos().x-shootBullets.get(i).getRadius()-5, shootBullets.get(i).getPos().y-shootBullets.get(i).getRadius()); // left boundary of bullet, top of bullet & fine-tuning
